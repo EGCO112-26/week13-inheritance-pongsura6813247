@@ -1,6 +1,5 @@
 #include "MU_Person.h"
 
-
 class student:public MU_person{
 private:
           double gpa; 
@@ -12,10 +11,10 @@ public:
    
 };
 
-student::student(long i, double g,string s){
+student::student(long i, double g,string s):MU_person(i,s){
 // Finish constructor to set all values
-         cout<<"MU student constructor  "<<gpa<<endl;
-         
+  gpa = g;
+  cout<<"MU student constructor  "<<gpa<<endl;
   
 }
 student::~student(){
@@ -25,5 +24,6 @@ student::~student(){
 
 
 void student::display(){
-  //Finish Display function
+  display_person();
+  cout<<"GPA : "<<gpa<<endl;
 }
